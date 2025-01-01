@@ -11,16 +11,22 @@ body {
 
 .input-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 12px;
     padding: 8px 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 32px;
-    width: 300px;
     gap: 5px;
 }
+
+.input-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
 
 label {
     font-family: Arial, sans-serif;
@@ -31,20 +37,28 @@ label {
 }
 
 .input-container select,
-.input-container input[type="text"],
+.input-container input,
 .input-container textarea {
+    font-family: Arial, sans-serif;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5px;
     font-size: 12px;
+    display: block;
 }
 
 .date-type {
     display: flex;
     align-items: center;
+    width: 230px;
 }
 #date-day {
     width: 25px;
+}
+.separator {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 2px;
 }
 #date-calendar {
     border: none;
@@ -57,23 +71,22 @@ label {
     width: 24px;
     height: 24px;
 }
-#text-type, #code-type, #text-area {
+
+#text-type, #code-type, #textarea-type, #number-type {
     width: 200px;
+    display: block;
+    margin: 5px;
 }
+
+/* 숫자형 타입 좌우정렬 */
 #number-type {
-    width: 200px;
     text-align: right;
 }
 #number-type::placeholder {
     text-align: left;
 }
 
+/* 장문형 타입 리사이징 제거 */
 #textarea-type {
     resize: none;
-}
-
-.separator {
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0 2px;
 }
