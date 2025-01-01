@@ -143,7 +143,7 @@ button {
 
 .grid-item {
     display: flex;
-    padding: 0px;
+    padding: 4px;
     border-bottom: 1px solid #eee;
     align-items: center;
 }
