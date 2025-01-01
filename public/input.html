@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexiBoard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="input-container">
+    <label for="date-widget">일자형</label>
+    <div class="date-widget" id="date-widget">
+      <select id="date-year">
+        <option value="">연도</option>
+        <!-- JavaScript로 동적 추가 -->
+      </select>
+      <span class="separator">/</span>
+      <select id="date-month">
+      <option value="">월</option>
+      <!-- 1~12월 추가 -->
+      </select>
+      <span class="separator">/</span>
+      <input type="text" id="date-day" placeholder="일" maxlength="2">
+      <input type="date" id="date-calendar">
+    </div>
+  </div>
+  <div class="input-container">
+    <label for="text-box">문자형</label>
+    <input type="text" id="text-box" placeholder="문자형" maxlength="20">
+  </div>
+  <div class="input-container">
+    <label for="number-box">숫자형</label>
+    <input type="text" id="number-box" placeholder="숫자형" maxlength="10">
+  </div>
+  <div class="input-container">
+    <label for="code-box">코드형</label>
+    <select id="code-box">
+      <option value="">코드</option>
+        <!-- 코드는 js에서 추가해줘야함 -->
+      </select>
+  </div>
+  <script src="js/input.js"></script>
+</body>
+</html>
