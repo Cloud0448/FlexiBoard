@@ -31,7 +31,8 @@ label {
 }
 
 .input-container select,
-.input-container input[type="text"] {
+.input-container input[type="text"],
+.input-container textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5px;
@@ -56,7 +57,7 @@ label {
     width: 24px;
     height: 24px;
 }
-#text-box, #code-box {
+#text-box, #code-box, #text-area {
     width: 200px;
 }
 #number-box {
@@ -66,6 +67,11 @@ label {
 #number-box::placeholder {
     text-align: left;
 }
+
+#text-area {
+    resize: none;
+}
+
 .separator {
     font-size: 14px;
     font-weight: bold;
