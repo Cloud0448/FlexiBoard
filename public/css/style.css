@@ -39,7 +39,7 @@ label {
     font-size: 12px;
 }
 
-.date-widget {
+.date-type {
     display: flex;
     align-items: center;
 }
@@ -57,18 +57,18 @@ label {
     width: 24px;
     height: 24px;
 }
-#text-box, #code-box, #text-area {
+#text-type, #code-type, #text-area {
     width: 200px;
 }
-#number-box {
+#number-type {
     width: 200px;
     text-align: right;
 }
-#number-box::placeholder {
+#number-type::placeholder {
     text-align: left;
 }
 
-#text-area {
+#textarea-type {
     resize: none;
 }
 
