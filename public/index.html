@@ -1,1 +1,45 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>입력화면 설정</title>
+  <link rel="stylesheet" href="css/setting.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="settingform-container">
+    <h1>입력화면 설정</h1>
+    <div class="list-container">
+      <div id="no-data-message" style="display: block; text-align: center; font-size: 12px; color: #888;">
+        등록된 데이터가 없습니다.
+      </div>
+      <div id="item-list">
+          <!-- 동적으로 추가된 항목들 -->
+      </div>
+    </div>
+
+      <h2>항목 추가</h2>
+      <div class="add-prop">
+        <label for="prop-name">항목명</label>
+        <input type="text" id="prop-name" placeholder="항목명을 입력하세요" required>
+        <label for="prop-type">항목유형</label>
+        <select id="prop-type" style="width: 160px;" required>
+          <option value="">선택</option>
+          <option value="date-type">일자형</option>
+          <option value="text-type">문자형</option>
+          <option value="textarea-type">장문형</option>
+          <option value="number-type">숫자형</option>
+          <option value="code-type">코드형</option>
+        </select>
+        <button type="button" id="add-item">추가</button>
+      </div>
+
+    <div class="submit-container">
+    <button type="submit">설정 저장</button>
+    </div>
+  </div>
+
+  <script src="js/setting.js"></script>
+</body>
+</html>
