@@ -78,19 +78,19 @@ function loadInputWidget(type, container) {
   let filePath = '';
   switch (type) {
     case 'date-type':
-      filePath = 'date-type.html';
+      filePath = 'components/date-type.html';
       break;
     case 'text-type':
-      filePath = 'text-type.html';
+      filePath = 'components/text-type.html';
       break;
     case 'textarea-type':
-      filePath = 'textarea-type.html';
+      filePath = 'components/textarea-type.html';
       break;
     case 'number-type':
-      filePath = 'number-type.html';
+      filePath = 'components/number-type.html';
       break;
     case 'code-type':
-      filePath = 'code-type.html';
+      filePath = 'components/code-type.html';
       break;
     default:
       container.innerHTML = '알 수 없는 타입';
