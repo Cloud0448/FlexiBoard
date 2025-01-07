@@ -42,7 +42,7 @@ function renderItemList() {
 
     items.forEach((item, index) => {
       const itemDiv = document.createElement('div');
-      itemDiv.classList.add('grid-item');
+      itemDiv.classList.add('item-to-add');
       
       // 항목명
       const itemName = document.createElement('div');

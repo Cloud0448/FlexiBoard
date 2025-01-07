@@ -12,20 +12,19 @@ body {
 .input-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 12px;
-    padding: 8px 12px;
+    padding: 14px 14px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     gap: 5px;
 }
 
-.input-item {
-    display: block;
+.prop-set {
+    display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
     margin: 10px;
   }
 
@@ -33,55 +32,52 @@ label {
     font-family: Arial, sans-serif;
     font-size: 12px;
     display: inline-block;
-    width: 80px;
-    text-indent: 5px;
+    width: 160px;
 }
 
 input, select, textarea, button {
-    font-family: Arial, sans-serif;
     padding: 8px;
     font-size: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.input-container select,
-.input-container input,
-.input-container textarea {
-    font-family: Arial, sans-serif;
-    padding: 8px;
-    font-size: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: block;
-}
-
+/* 날짜형 */
 .date-type {
     display: flex;
     align-items: center;
-    width: 230px;
+    width: 100%;
 }
+
+.date-type select {
+    padding: 7px;
+}
+
 #date-day {
-    width: 25px;
+    padding: 7px;
+    width: 18px;
 }
 .separator {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
-    margin: 0 2px;
+    margin: 0 6px;
 }
 #date-calendar {
     border: none;
     background: transparent;
     color: transparent;
     font-size: 0;
+    padding: 0px;
 }
 #date-calendar::-webkit-calendar-picker-indicator {
     cursor: pointer;
     width: 24px;
     height: 24px;
+    margin-left: 4px;
 }
 
-#text-type, #code-type, #textarea-type, #number-type {
+/* 문자형, 장문형, 숫자형, 코드형 */
+#text-type, #textarea-type, #number-type, #code-type {
     font-family: Arial, sans-serif;
     width: 100%;
     display: block;
@@ -105,7 +101,32 @@ input, select, textarea, button {
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 600px;
+    max-width: 650px;
+}
+
+.list-container {  
+    background-color: #f9f9f9; 
+    border: 1px solid #ccc; 
+    padding: 12px;
+    border-radius: 8px;
+    min-height: 50px;
+}
+
+.submit-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.add-prop-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-prop-container label {
+    font-size: 12px;
+    width: 80px;
+    margin-left: 10px;
 }
 
 h1 {
@@ -120,17 +141,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-.add-prop {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-
-label {
-    font-size: 12px;
-}
-
 button {
     background-color: #4CAF50;
     color: white;
@@ -143,35 +153,23 @@ button {
     margin-left: auto;
 }
 
-.grid-container {
-    border: 1px solid;
-    background-color: #ccc;
-    padding: 8px;
-    width: 500px;
-}
-
-.grid-item {
+/* 입력화면에 설정할 항목(아이템) */
+.item-to-add {
     display: flex;
     padding: 4px;
     border-bottom: 1px solid #eee;
     align-items: center;
 }
 
-.grid-item .prop-name {
-    width: 180px;
+.item-to-add .prop-name {
+    width: 200px;
     font-size: 12px;
     text-overflow: ellipsis;
   }
 
-.submit-container {
-    text-align: right;
-    margin-top: 20px;
-}
-
-.list-container {  
-    background-color: #f9f9f9; 
-    border: 1px solid #ccc; 
-    padding: 12px 10px; 
-    margin-top: 20px;  
-    border-radius: 8px;
-}
+  #no-data-message {
+    display: block; 
+    text-align: center; 
+    font-size: 12px; 
+    color: #888;
+  }
