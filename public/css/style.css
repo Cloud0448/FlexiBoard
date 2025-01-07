@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-.input-container {
+.layout {
     display: flex;
     flex-direction: column;
     align-items: flex;
@@ -48,11 +48,9 @@ input, select, textarea {
     align-items: center;
     width: 100%;
 }
-
 .date-type select {
     padding: 7px;
 }
-
 #date-day {
     padding: 7px;
     width: 18px;
@@ -94,16 +92,6 @@ input, select, textarea {
 
 
 /* 설정 화면용 css */
-.settingform-container {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 650px;
-}
-
 .list-container {  
     background-color: #f9f9f9; 
     border: 1px solid #ccc; 
@@ -112,7 +100,7 @@ input, select, textarea {
     min-height: 50px;
 }
 
-.submit-container {
+.footer-container {
     text-align: right;
     margin-top: 20px;
 }
@@ -173,7 +161,7 @@ button {
 
   #no-data-message {
     display: block; 
-    text-align: center; 
+    text-align: center;
     font-size: 12px; 
     color: #888;
   }
