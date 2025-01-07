@@ -37,6 +37,14 @@ label {
     text-indent: 5px;
 }
 
+input, select, textarea, button {
+    font-family: Arial, sans-serif;
+    padding: 8px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 .input-container select,
 .input-container input,
 .input-container textarea {
@@ -102,7 +110,7 @@ label {
 
 h1 {
     text-align: left;
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 20px;
 }
 
@@ -167,4 +175,3 @@ button {
     margin-top: 20px;  
     border-radius: 8px;
 }
-
