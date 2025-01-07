@@ -78,18 +78,15 @@ syncDate();
 
 
 // 숫자용 밸리데이션 처리할 요소들의 id를 배열로 관리
-const elementsToHandle = ['number-type', 'date-day'];
+const numberElements = ['number-type', 'date-day'];
 
-// 공통 이벤트 리스너
-function restrictToNumbers(event) {
-  // 숫자가 아닌 문자를 제거
-  event.target.value = event.target.value.replace(/[^0-9]/g, '');
-}
-
-// 배열에 있는 모든 요소에 대해 이벤트 리스너 추가
-elementsToHandle.forEach(i => {
+// 배열에 있는 모든 요소에 대해 숫자가 아닌 문자를 제거하는 동작
+numberElements.forEach(i => {
   const element = document.getElementById(i);
   if (element) {
-    element.addEventListener('input', restrictToNumbers);
+    element.addEventListener('input', (event) => {
+      // 숫자가 아닌 문자를 제거
+      event.target.value = event.target.value.replace(/[^0-9]/g, '');
+    })
   }
 });
