@@ -77,7 +77,7 @@ dayInput.value = currentDay;
 syncDate();
 
 
-// 처리할 요소들의 id를 배열로 관리
+// 숫자용 밸리데이션 처리할 요소들의 id를 배열로 관리
 const elementsToHandle = ['number-type', 'date-day'];
 
 // 공통 이벤트 리스너
