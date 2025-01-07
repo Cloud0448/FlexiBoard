@@ -22,10 +22,11 @@ body {
 }
 
 .input-item {
-    display: flex;
+    display: block;
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin: 10px;
   }
 
 label {
@@ -74,7 +75,7 @@ label {
 
 #text-type, #code-type, #textarea-type, #number-type {
     font-family: Arial, sans-serif;
-    width: 200px;
+    width: 100%;
     display: block;
 }
 #number-type {
