@@ -11,39 +11,49 @@
     <h2>자료 입력</h2>
     <div class="prop-set">
       <label for="date-type">일자형</label>
-      <div class="date-type" id="date-type">
-        <select id="date-year">
-          <option value="">연도</option>
-          <!-- JavaScript로 동적 추가 -->
-        </select>
-        <span class="separator">/</span>
-        <select id="date-month">
-        <option value="">월</option>
-        <!-- 1~12월 추가 -->
-        </select>
-        <span class="separator">/</span>
-        <input type="text" id="date-day" placeholder="일" maxlength="2">
-        <input type="date" id="date-calendar">
+      <div class="input-widget">
+        <div class="date-type" id="date-type">
+          <select id="date-year">
+            <option value="">연도</option>
+            <!-- JavaScript로 동적 추가 -->
+          </select>
+          <span class="separator">/</span>
+          <select id="date-month">
+          <option value="">월</option>
+          <!-- 1~12월 추가 -->
+          </select>
+          <span class="separator">/</span>
+          <input type="text" id="date-day" placeholder="일" maxlength="2">
+          <input type="date" id="date-calendar">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="prop-set">
+      <label for="text-type">문자형</label>
+      <div class="input-widget">
+      <input type="text" id="text-type" placeholder="문자형" maxlength="200">
       </div>
     </div>
 
     <div class="prop-set">
-      <label for="text-type">문자형</label>
-      <input type="text" id="text-type" placeholder="문자형" maxlength="200">
-    </div>
-
-    <div class="prop-set">
       <label for="textarea-type">장문형</label>
-      <textarea cols="100", rows="2" id="textarea-type" placeholder="장문형" maxlength="1000"></textarea>
+      <div class="input-widget">
+        <textarea cols="100", rows="2" id="textarea-type" placeholder="장문형" maxlength="1000"></textarea>
+      </div>
     </div>
-
+    
     <div class="prop-set">
       <label for="number-type">숫자형</label>
+      <div class="input-widget">
       <input type="text" id="number-type" placeholder="숫자형" maxlength="12">
+      </div>
     </div>
 
     <div class="prop-set">
       <label for="code-type">코드형</label>
+      <div class="input-widget">
       <select id="code-type">
         <option value="">==</option>
         <option value="">코드1</option>
@@ -51,6 +61,7 @@
           <!-- 코드는 js에서 추가해줘야함 -->
       </select>
     </div>
+  </div>
 
     <div class="footer-container">
       <button type="submit">저장</button>
