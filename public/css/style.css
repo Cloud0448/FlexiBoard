@@ -87,6 +87,7 @@ input, select, textarea {
     text-align: left;
 }
 #textarea-type {
+    width: 240px;
     resize: none;
 }
 
@@ -155,7 +156,7 @@ button {
 }
 
 .item-to-add .prop-name {
-    width: 200px;
+    width: 160px;
     font-size: 12px;
     text-overflow: ellipsis;
   }
