@@ -26,8 +26,7 @@ addItemButton.addEventListener('click', function () {
     // 입력 필드 초기화
     propNameInput.value = '';
     propTypeSelect.value = '';
-  }
-  else {
+  } else {
     alert("항목명을 입력하고 유형을 선택해주세요!")
   }
 });
@@ -43,7 +42,17 @@ function renderItemList() {
     items.forEach((item, index) => {
       const itemDiv = document.createElement('div');
       itemDiv.classList.add('item-to-add');
+      itemDiv.setAttribute('draggable', 'false'); // 기본적으로 드래그 불가능
+
+      // 드래그 핸들(화살표 아이콘) 추가
+      const dragHandle = document.createElement('span');
+      dragHandle.classList.add('drag-handle');
       
+      // Font Awesome 아이콘 추가
+      dragHandle.innerHTML = '<i class="fas fa-ellipsis-v"></i>'; 
+      
+      itemDiv.appendChild(dragHandle);
+
       // 항목명
       const itemName = document.createElement('div');
       itemName.textContent = item.name;
@@ -53,8 +62,6 @@ function renderItemList() {
       // 항목의 입력 위젯 추가
       const inputWidget = document.createElement('div');
       inputWidget.classList.add('input-widget');
-
-      // prop-type에 맞는 입력 위젯을 외부 HTML 파일에서 불러오기
       loadInputWidget(item.type, inputWidget);
       itemDiv.appendChild(inputWidget);
 
@@ -68,7 +75,43 @@ function renderItemList() {
       });
       itemDiv.appendChild(removeButton);
 
-      // item-list에 추가
+      // 드래그 핸들 클릭 시 드래그 시작
+      dragHandle.addEventListener('mousedown', (event) => {
+        itemDiv.setAttribute('draggable', 'true'); // 드래그 가능하게 설정
+        itemDiv.classList.add('dragging'); // 드래그 중인 항목에 테두리 추가
+      });
+
+      itemDiv.addEventListener('dragstart', (event) => {
+        event.dataTransfer.setData('text/plain', index); // 드래그 시작 시 항목의 인덱스를 저장
+      });
+
+      itemDiv.addEventListener('dragend', (event) => {
+        itemDiv.classList.remove('dragging'); // 드래그가 끝나면 테두리 제거
+        itemDiv.setAttribute('draggable', 'false'); // 드래그 불가능하게 설정
+      });
+
+      itemDiv.addEventListener('dragover', (event) => {
+        event.preventDefault(); // 드래그한 항목이 다른 항목 위에 있을 때 기본 동작을 허용
+        itemDiv.classList.add('drag-over'); // 다른 항목 위에 있을 때 테두리 추가
+      });
+
+      itemDiv.addEventListener('dragleave', (event) => {
+        itemDiv.classList.remove('drag-over'); // 드래그가 벗어나면 테두리 제거
+      });
+
+      itemDiv.addEventListener('drop', (event) => {
+        event.preventDefault();
+        const draggedIndex = event.dataTransfer.getData('text/plain'); // 드래그된 항목의 인덱스
+        const targetIndex = index; // 드랍된 위치의 인덱스
+
+        if (draggedIndex !== targetIndex) {
+          const draggedItem = items[draggedIndex];
+          items.splice(draggedIndex, 1); // 원래 위치에서 항목 제거
+          items.splice(targetIndex, 0, draggedItem); // 새로운 위치에 항목 삽입
+          renderItemList(); // 항목 리스트 다시 그리기
+        }
+      });
+
       itemList.appendChild(itemDiv);
     });
   }
