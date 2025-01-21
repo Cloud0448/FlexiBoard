@@ -67,12 +67,19 @@ function renderItemList() {
 
       // 삭제 버튼
       const removeButton = document.createElement('button');
-      removeButton.textContent = '삭제';
       removeButton.classList.add('remove-item');
+
+      // Font Awesome X 모양 아이콘 추가
+      const icon = document.createElement('i');
+      icon.classList.add('fas', 'fa-times');
+      removeButton.appendChild(icon);
+
+      // 클릭 이벤트 추가
       removeButton.addEventListener('click', () => {
         items.splice(index, 1); // 항목 삭제
         renderItemList(); // 항목 리스트 다시 그리기
       });
+
       itemDiv.appendChild(removeButton);
 
       // 드래그 핸들 클릭 시 드래그 시작
