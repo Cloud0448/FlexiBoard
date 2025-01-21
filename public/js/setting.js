@@ -84,11 +84,18 @@ function renderItemList() {
 
       // 드래그 핸들 클릭 시 드래그 시작
       dragHandle.addEventListener('mousedown', (event) => {
+        // 이전에 드래깅 클래스가 있는 항목 제거
+        const currentDragging = document.querySelector('.dragging');
+        if (currentDragging) {
+          currentDragging.classList.remove('dragging');
+        }
+
         itemDiv.setAttribute('draggable', 'true'); // 드래그 가능하게 설정
         itemDiv.classList.add('dragging'); // 드래그 중인 항목에 테두리 추가
       });
 
       itemDiv.addEventListener('dragstart', (event) => {
+        event.dataTransfer.effectAllowed = 'move'; // 드래그 효과를 'move'로 설정
         event.dataTransfer.setData('text/plain', index); // 드래그 시작 시 항목의 인덱스를 저장
       });
 
@@ -123,6 +130,15 @@ function renderItemList() {
     });
   }
 }
+
+// 바깥을 클릭하면 드래깅 효과가 제거되도록 설정
+document.addEventListener('click', (event) => {
+  const draggingItem = document.querySelector('.dragging');
+  // 드래깅 중인 항목이 있을 경우, 다른 곳을 클릭하면 드래깅 클래스 제거
+  if (draggingItem && !draggingItem.contains(event.target)) {
+    draggingItem.classList.remove('dragging');
+  }
+});
 
 function loadInputWidget(type, container) {
   let filePath = '';

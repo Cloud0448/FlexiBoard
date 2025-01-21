@@ -219,7 +219,7 @@ button {
 .drag-handle {
     width: 20px;
     text-align: center;
-    cursor: pointer;
+    cursor: move;
     margin-right: 16px;
     user-select: none; /* 텍스트 선택 방지 */
   }
