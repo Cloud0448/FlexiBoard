@@ -42,6 +42,10 @@ input, select, textarea {
     border-radius: 5px;
 }
 
+select {
+    padding: 7px;
+}
+
 /* 날짜형 */
 .date-type {
     display: flex;
@@ -172,7 +176,7 @@ button {
 .item-to-add {
     display: flex;
     padding: 4px;
-    border-bottom: 1px solid #eee;
+    border: 1px solid transparent;
     align-items: center;
     width: 100%;
     box-sizing: border-box;
@@ -207,6 +211,8 @@ button {
   /* 드래그된 항목이 다른 항목 위에 있을 때, 해당 항목에 표시할 스타일 */
 .drag-over {
     border: 1px solid #cacaca;
+    padding:
+    box-sizing: border-box;
   }
   
 /* 드래그 핸들 아이콘 스타일 */
