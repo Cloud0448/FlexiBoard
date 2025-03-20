@@ -1,3 +1,5 @@
+import { loadInputWidget } from './validation.js';
+
 const itemList = document.getElementById('item-list');
 const addItemButton = document.getElementById('add-item');
 const propNameInput = document.getElementById('prop-name');
@@ -139,37 +141,3 @@ document.addEventListener('click', (event) => {
     draggingItem.classList.remove('dragging');
   }
 });
-
-function loadInputWidget(type, container) {
-  let filePath = '';
-  switch (type) {
-    case 'date-type':
-      filePath = 'components/date-type.html';
-      break;
-    case 'text-type':
-      filePath = 'components/text-type.html';
-      break;
-    case 'textarea-type':
-      filePath = 'components/textarea-type.html';
-      break;
-    case 'number-type':
-      filePath = 'components/number-type.html';
-      break;
-    case 'code-type':
-      filePath = 'components/code-type.html';
-      break;
-    default:
-      container.innerHTML = '알 수 없는 타입';
-      return;
-  }
-
-  fetch(filePath)
-    .then(response => response.text())
-    .then(html => {
-      container.innerHTML = html; // 불러온 HTML을 container에 삽입
-    })
-    .catch(error => {
-      console.error('입력 위젯 로드 실패:', error);
-      container.innerHTML = '위젯 로드 실패';
-    });
-}
